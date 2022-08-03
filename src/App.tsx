@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
+import HttpService from "./remote/httpService";
 
 function App() {
+  useEffect(() => {
+    HttpService.getWord("hello");
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
