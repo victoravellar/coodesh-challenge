@@ -12,16 +12,22 @@ function FavoritesWords({
   getWord,
 }: FavoritesWordsProps) {
   return (
-    <WordsTable>
-      {favoriteWords.map((word) => (
-        <>
-          <TdElement>
-            <span onClick={() => getWord(word)}>{word}</span>
-            <span onClick={() => removeWordFromFavorites(word)}>x</span>
-          </TdElement>
-        </>
-      ))}
-    </WordsTable>
+    <div data-testid="favorites">
+      {favoriteWords.length === 0 ? (
+        <p>You dont have any word save as favorite</p>
+      ) : (
+        <WordsTable>
+          {favoriteWords.map((word) => (
+            <>
+              <TdElement>
+                <span onClick={() => getWord(word)}>{word}</span>
+                <span onClick={() => removeWordFromFavorites(word)}>x</span>
+              </TdElement>
+            </>
+          ))}
+        </WordsTable>
+      )}
+    </div>
   );
 }
 

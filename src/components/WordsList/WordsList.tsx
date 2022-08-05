@@ -7,11 +7,17 @@ interface WordsListProps {
 
 function WordsList({ wordsList, getWord }: WordsListProps) {
   return (
-    <WordsTable>
-      {wordsList.map((word) => (
-        <TdElement onClick={() => getWord(word)}>{word}</TdElement>
-      ))}
-    </WordsTable>
+    <div data-testid="words_list">
+      {wordsList.length === 0 ? (
+        <p>Your words list is empty</p>
+      ) : (
+        <WordsTable>
+          {wordsList.map((word) => (
+            <TdElement onClick={() => getWord(word)}>{word}</TdElement>
+          ))}
+        </WordsTable>
+      )}
+    </div>
   );
 }
 

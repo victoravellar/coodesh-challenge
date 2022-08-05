@@ -9,7 +9,7 @@ interface WordBoxProps {
 
 function WordBox({ word, audio, meanings, phonetic }: WordBoxProps) {
   return (
-    <div key={audio ? audio : null}>
+    <div key={word}>
       <WordBoxWrapper>
         <h3>{word}</h3>
         <h3>{phonetic}</h3>
