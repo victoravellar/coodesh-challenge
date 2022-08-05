@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import useFavoriteWords from "../hooks/useFavoriteWords/useFavoriteWords";
 import useWord from "../hooks/useWord/useWord";
-import words from "word-list-json";
 import { HomeContainer, HomeWrapper, WordBoxContainer } from "./Home.styles";
 import { WordBox, WordsView } from "../components";
 
@@ -23,13 +22,13 @@ function Home() {
     getWord(wordToBeSearch);
   }, [wordToBeSearch]);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
   function searchForPreviusWord() {
     const previousWord = wordList[wordList.length - 2];
     setWordToBeSearch(previousWord);
+  }
+
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
 
   return (

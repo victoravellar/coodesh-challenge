@@ -14,7 +14,6 @@ export default function useWord() {
   });
   const [isLoading, setLoading] = useState(true);
   const [wordToBeSearch, setWordToBeSearch] = useState(pickRandomWord());
-  const [error, setError] = useState(false);
   const { wordList, setWordList } = useWordList();
 
   function pickRandomWord() {
@@ -49,7 +48,6 @@ export default function useWord() {
   return {
     wordData,
     isLoading,
-    error,
     getWord,
     setWordToBeSearch,
     pickRandomWord,
