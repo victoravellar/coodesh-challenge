@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import GlobalStyle from "./global.styles";
 import Home from "./pages/Home";
 
 const root = ReactDOM.createRoot(
@@ -7,6 +8,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    <GlobalStyle />
     <Home />
   </React.StrictMode>
 );

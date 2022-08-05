@@ -14,9 +14,12 @@ export const HomeContainer = styled.div`
   grid-column-gap: 40px;
   grid-row-gap: 0px;
   width: 1200px;
+  height: 400px;
 
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
+    height: unset;
+    padding: 15px;
   }
 `;
 

@@ -9,7 +9,7 @@ interface WordsHeaderProps {
 function WordsHeader({ view, setView, text }: WordsHeaderProps) {
   return (
     <h1
-      style={{ color: view === text ? "red" : "gray", cursor: "pointer" }}
+      style={{ color: view === text ? "gray" : "white", cursor: "pointer" }}
       onClick={() => setView(view)}
     >
       {text}

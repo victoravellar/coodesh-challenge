@@ -1,7 +1,7 @@
 import { Meaning } from "../../utils/types/interfaces";
-import { WordBoxWrapper } from "./WordBox.styles";
+import { WordBoxWrapper, Audio } from "./WordBox.styles";
 interface WordBoxProps {
-  word: any;
+  word: string;
   audio: string;
   meanings: Meaning[];
   phonetic: string;
@@ -16,10 +16,10 @@ function WordBox({ word, audio, meanings, phonetic }: WordBoxProps) {
       </WordBoxWrapper>
       <div>
         {audio ? (
-          <audio controls>
+          <Audio controls>
             <source src={audio} type="audio/ogg" />
             Your browser does not support the audio element.
-          </audio>
+          </Audio>
         ) : (
           <p>Audio is unavaliabe</p>
         )}
