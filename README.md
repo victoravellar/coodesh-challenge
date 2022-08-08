@@ -1,5 +1,7 @@
 # coodesh-challenge
 
+This is a challenge by Coodesh
+
 this project was made using: React, Hooks, Axios, React Testing Library and Session Storage to cache. Im using wrod-list-json library to provide words to get on api.
 
 Node version - 16.10.0
