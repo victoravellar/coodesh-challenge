@@ -16,7 +16,7 @@ export const HomeContainer = styled.div`
   width: 1200px;
   height: 400px;
 
-  @media (max-width: 800px) {
+  @media (max-width: 840px) {
     grid-template-columns: 1fr;
     height: unset;
     padding: 15px;
@@ -30,4 +30,10 @@ export const WordBoxContainer = styled.div`
 export const ListOfWordsContainer = styled.div`
   grid-area: 1 / 2 / 2 / 3;
   display: flex;
+`;
+
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  max-width: 400px;
+  justify-content: space-between;
 `;
