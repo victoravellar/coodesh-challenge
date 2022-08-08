@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-export default function useFavoriteWords(word: any) {
+export default function useFavoriteWords() {
   const [favoriteWords, setFavoriteWords] = useState<string[]>([]);
 
-  function setWordAsFavorite() {
+  function setWordAsFavorite(word: string) {
     setFavoriteWords((oldArray) => [...oldArray, word]);
   }
 
