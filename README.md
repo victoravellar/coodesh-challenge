@@ -1,6 +1,6 @@
 # coodesh-challenge
 
-This is a challenge by Coodesh
+This is a challenge by https://coodesh.com/
 
 this project was made using: React, Hooks, Axios, React Testing Library and Session Storage to cache. Im using wrod-list-json library to provide words to get on api.
 
