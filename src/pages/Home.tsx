@@ -1,8 +1,14 @@
 import { useEffect } from "react";
 import useFavoriteWords from "../hooks/useFavoriteWords/useFavoriteWords";
 import useWord from "../hooks/useWord/useWord";
-import { HomeContainer, HomeWrapper, WordBoxContainer } from "./Home.styles";
+import {
+  ButtonsWrapper,
+  HomeContainer,
+  HomeWrapper,
+  WordBoxContainer,
+} from "./Home.styles";
 import { WordBox, WordsView } from "../components";
+import { Button } from "../components/Button/Button";
 
 function Home() {
   const {
@@ -30,23 +36,33 @@ function Home() {
   return (
     <HomeWrapper>
       <HomeContainer>
-        {isLoading ? <div>Loading...</div> : <WordBoxContainer>
-          <WordBox
-            word={word}
-            audio={audio}
-            meanings={meanings}
-            phonetic={phonetic}
-          />
-          <div>
-            <button onClick={() => searchForPreviusWord()}>Back</button>
-            <button onClick={() => setWordToBeSearch(pickRandomWord())}>
-              Next
-            </button>
-            {!favoriteWords.includes(word) && (
-              <button onClick={() => setWordAsFavorite(word)}>Set word as favorite</button>
-            )}
-          </div>
-        </WordBoxContainer>}
+        {isLoading ? (
+          <div>Loading...</div>
+        ) : (
+          <WordBoxContainer>
+            <WordBox
+              word={word}
+              audio={audio}
+              meanings={meanings}
+              phonetic={phonetic}
+            />
+            <ButtonsWrapper>
+              <Button press={() => searchForPreviusWord()}>Back</Button>
+              <Button press={() => setWordToBeSearch(pickRandomWord())}>
+                Next
+              </Button>
+              {!favoriteWords.includes(word) ? (
+                <Button press={() => setWordAsFavorite(word)}>
+                  Set word as favorite
+                </Button>
+              ) : (
+                <Button press={() => removeWordFromFavorites(word)}>
+                  Remove from favorites
+                </Button>
+              )}
+            </ButtonsWrapper>
+          </WordBoxContainer>
+        )}
         <WordsView
           wordList={wordList}
           removeWordFromFavorites={removeWordFromFavorites}
