@@ -29,11 +29,9 @@ function WordBox({ word, audio, meanings, phonetic }: WordBoxProps) {
         <h1>Meanings</h1>
         {meanings.map((meaning) => {
           return (
-            <p>
-              <h2>
-                {meaning.partOfSpeech} - {meaning.definitions[0].definition}
-              </h2>
-            </p>
+            <h2 key={meaning.partOfSpeech}>
+              {meaning.partOfSpeech} - {meaning.definitions[0].definition}
+            </h2>
           );
         })}
       </div>
