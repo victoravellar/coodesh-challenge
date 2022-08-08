@@ -8,6 +8,7 @@ import {
   WordBoxContainer,
 } from "./Home.styles";
 import { WordBox, WordsView, Button } from "../components";
+import { Spinner } from "../components/Spinner/Spinner.styles";
 
 function Home() {
   const {
@@ -35,33 +36,35 @@ function Home() {
   return (
     <HomeWrapper>
       <HomeContainer>
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : (
-          <WordBoxContainer>
-            <WordBox
-              word={word}
-              audio={audio}
-              meanings={meanings}
-              phonetic={phonetic}
-            />
-            <ButtonsWrapper>
-              <Button press={() => searchForPreviusWord()}>Back</Button>
-              <Button press={() => setWordToBeSearch(pickRandomWord())}>
-                Next
-              </Button>
-              {!favoriteWords.includes(word) ? (
-                <Button press={() => setWordAsFavorite(word)}>
-                  Set word as favorite
+        <WordBoxContainer>
+          {isLoading ? (
+            <Spinner />
+          ) : (
+            <>
+              <WordBox
+                word={word}
+                audio={audio}
+                meanings={meanings}
+                phonetic={phonetic}
+              />
+              <ButtonsWrapper>
+                <Button press={() => searchForPreviusWord()}>Back</Button>
+                <Button press={() => setWordToBeSearch(pickRandomWord())}>
+                  Next
                 </Button>
-              ) : (
-                <Button press={() => removeWordFromFavorites(word)}>
-                  Remove from favorites
-                </Button>
-              )}
-            </ButtonsWrapper>
-          </WordBoxContainer>
-        )}
+                {!favoriteWords.includes(word) ? (
+                  <Button press={() => setWordAsFavorite(word)}>
+                    Set word as favorite
+                  </Button>
+                ) : (
+                  <Button press={() => removeWordFromFavorites(word)}>
+                    Remove from favorites
+                  </Button>
+                )}
+              </ButtonsWrapper>
+            </>
+          )}
+        </WordBoxContainer>
         <WordsView
           wordList={wordList}
           removeWordFromFavorites={removeWordFromFavorites}

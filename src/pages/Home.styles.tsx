@@ -27,11 +27,6 @@ export const WordBoxContainer = styled.div`
   grid-area: 1 / 1 / 2 / 2;
 `;
 
-export const ListOfWordsContainer = styled.div`
-  grid-area: 1 / 2 / 2 / 3;
-  display: flex;
-`;
-
 export const ButtonsWrapper = styled.div`
   display: flex;
   max-width: 400px;
