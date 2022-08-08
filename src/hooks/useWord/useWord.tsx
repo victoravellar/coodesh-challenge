@@ -14,16 +14,16 @@ export default function useWord() {
   });
   const [isLoading, setLoading] = useState(true);
   const [wordToBeSearch, setWordToBeSearch] = useState(pickRandomWord());
-  const { wordList, setWordList } = useWordList();
+  const { wordList, includeWordOnWordList } = useWordList();
 
   function pickRandomWord() {
     const randomNumber = Math.floor(Math.random() * words.length);
     return words[randomNumber];
   }
 
-  async function getWord(searchWord: string): Promise<any> {
+  async function getWord(searchWord: string): Promise<void> {
     try {
-      setLoading(true)
+      setLoading(true);
       const response = await HttpService.getWord(searchWord);
       const wordFactory = new WordFactory(response);
       setWordData({
@@ -38,12 +38,6 @@ export default function useWord() {
     } finally {
       setLoading(false);
     }
-  }
-
-  function includeWordOnWordList(word: string) {
-    const wordIsOnList = wordList.includes(word);
-    if (wordIsOnList) return;
-    setWordList((oldList) => [...oldList, word]);
   }
 
   return {
