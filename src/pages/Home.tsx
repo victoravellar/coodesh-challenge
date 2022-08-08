@@ -7,8 +7,7 @@ import {
   HomeWrapper,
   WordBoxContainer,
 } from "./Home.styles";
-import { WordBox, WordsView } from "../components";
-import { Button } from "../components/Button/Button";
+import { WordBox, WordsView, Button } from "../components";
 
 function Home() {
   const {

@@ -1,4 +1,3 @@
-import { Button } from "../Button/Button";
 import { TdElement, WordsTable } from "../WordsWrapper/WordsWrapper.styles";
 
 interface FavoritesWordsProps {

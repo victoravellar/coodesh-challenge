@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FavoritesWords, WordsList } from "../index";
 import TypographyHeader from "../TypographyHeader/TypographyHeader";
-import WordsHeader from "../TypographyHeader/TypographyHeader";
 import { WordsHeaderWrapper } from "./WordsView.styles";
 
 interface WordsViewProps {

@@ -6,6 +6,6 @@ interface ButttonProps {
   press?: () => void;
 }
 
-export function Button({ children, press }: ButttonProps) {
+export default function Button({ children, press }: ButttonProps) {
   return <ButtonStyles onClick={press}>{children}</ButtonStyles>;
 }
