@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const ButtonStyles = styled.button`
+export const ButtonStyles = styled.button<{ width: number }>`
+  width: ${(props) => props.width}%;
   margin: 0.3rem 0;
   color: #fff;
   border: none;

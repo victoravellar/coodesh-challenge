@@ -5,6 +5,10 @@ export const HomeWrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+
+  @media (max-width: 840px) {
+    height: unset;
+  }
 `;
 
 export const HomeContainer = styled.div`
@@ -29,6 +33,11 @@ export const WordBoxContainer = styled.div`
 
 export const ButtonsWrapper = styled.div`
   display: flex;
-  max-width: 400px;
+  justify-content: space-between;
+  flex-direction: column;
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
   justify-content: space-between;
 `;

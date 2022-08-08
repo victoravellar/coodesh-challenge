@@ -6,6 +6,7 @@ import {
   HomeContainer,
   HomeWrapper,
   WordBoxContainer,
+  Wrapper,
 } from "./Home.styles";
 import { WordBox, WordsView, Button } from "../components";
 import { Spinner } from "../components/Spinner/Spinner.styles";
@@ -48,10 +49,17 @@ function Home() {
                 phonetic={phonetic}
               />
               <ButtonsWrapper>
-                <Button press={() => searchForPreviusWord()}>Back</Button>
-                <Button press={() => setWordToBeSearch(pickRandomWord())}>
-                  Next
-                </Button>
+                <Wrapper>
+                  <Button press={() => searchForPreviusWord()} width={48}>
+                    Back
+                  </Button>
+                  <Button
+                    press={() => setWordToBeSearch(pickRandomWord())}
+                    width={48}
+                  >
+                    Next
+                  </Button>
+                </Wrapper>
                 {!favoriteWords.includes(word) ? (
                   <Button press={() => setWordAsFavorite(word)}>
                     Set word as favorite
