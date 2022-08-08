@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FavoritesWords, WordsList } from "../index";
-import WordsHeader from "../WordsHeader/WordsHeader";
+import TypographyHeader from "../TypographyHeader/TypographyHeader";
+import WordsHeader from "../TypographyHeader/TypographyHeader";
 import { WordsHeaderWrapper } from "./WordsView.styles";
 
 interface WordsViewProps {
@@ -23,12 +24,12 @@ function WordsView({
   return (
     <div>
       <WordsHeaderWrapper>
-        <WordsHeader
+        <TypographyHeader
           text="Word List"
           setView={() => setView("Word List")}
           view={view}
         />
-        <WordsHeader
+        <TypographyHeader
           text="Favorites"
           setView={() => setView("Favorites")}
           view={view}
