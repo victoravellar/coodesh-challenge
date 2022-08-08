@@ -23,6 +23,7 @@ export default function useWord() {
 
   async function getWord(searchWord: string): Promise<any> {
     try {
+      setLoading(true)
       const response = await HttpService.getWord(searchWord);
       const wordFactory = new WordFactory(response);
       setWordData({

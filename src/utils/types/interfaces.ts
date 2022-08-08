@@ -21,5 +21,5 @@ export interface WordFormatted {
   word: string;
   audio: string;
   meanings: Meaning[];
-  phonetic: string;
+  phonetic: string | null;
 }

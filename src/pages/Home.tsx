@@ -16,7 +16,7 @@ function Home() {
   } = useWord();
   const { word, audio, meanings, phonetic } = wordData;
   const { setWordAsFavorite, favoriteWords, removeWordFromFavorites } =
-    useFavoriteWords(word);
+    useFavoriteWords();
 
   useEffect(() => {
     getWord(wordToBeSearch);
@@ -27,14 +27,10 @@ function Home() {
     setWordToBeSearch(previousWord);
   }
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <HomeWrapper>
       <HomeContainer>
-        <WordBoxContainer>
+        {isLoading ? <div>Loading...</div> : <WordBoxContainer>
           <WordBox
             word={word}
             audio={audio}
@@ -42,15 +38,15 @@ function Home() {
             phonetic={phonetic}
           />
           <div>
-            <button onClick={() => searchForPreviusWord()}>Voltar</button>
+            <button onClick={() => searchForPreviusWord()}>Back</button>
             <button onClick={() => setWordToBeSearch(pickRandomWord())}>
-              Próximo
+              Next
             </button>
             {!favoriteWords.includes(word) && (
-              <button onClick={setWordAsFavorite}>Set word as favorite</button>
+              <button onClick={() => setWordAsFavorite(word)}>Set word as favorite</button>
             )}
           </div>
-        </WordBoxContainer>
+        </WordBoxContainer>}
         <WordsView
           wordList={wordList}
           removeWordFromFavorites={removeWordFromFavorites}

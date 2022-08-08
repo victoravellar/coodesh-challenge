@@ -14,8 +14,8 @@ export class WordFactory {
     return this.wordData.meanings;
   }
 
-  get phonetic(): string {
-    return this.wordData.phonetics[0].text;
+  get phonetic(): string | null  {
+    return this.wordData.phonetics[0]?.text || null
   }
 
   get audio(): string {

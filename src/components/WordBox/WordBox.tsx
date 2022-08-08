@@ -4,7 +4,7 @@ interface WordBoxProps {
   word: string;
   audio: string;
   meanings: Meaning[];
-  phonetic: string;
+  phonetic: string | null;
 }
 
 function WordBox({ word, audio, meanings, phonetic }: WordBoxProps) {
@@ -12,11 +12,12 @@ function WordBox({ word, audio, meanings, phonetic }: WordBoxProps) {
     <div key={word}>
       <WordBoxWrapper>
         <h3>{word}</h3>
-        <h3>{phonetic}</h3>
+        <h4>{phonetic ? phonetic : 'Phonetic is unavailable'}</h4>
       </WordBoxWrapper>
       <div>
         {audio ? (
           <Audio controls>
+            <source src={audio} type="audio/mpeg" />
             <source src={audio} type="audio/ogg" />
             Your browser does not support the audio element.
           </Audio>
