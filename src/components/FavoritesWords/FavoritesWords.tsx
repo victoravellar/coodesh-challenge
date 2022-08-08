@@ -1,3 +1,4 @@
+import { Button } from "../Button/Button";
 import { TdElement, WordsTable } from "../WordsWrapper/WordsWrapper.styles";
 
 interface FavoritesWordsProps {
@@ -18,12 +19,13 @@ function FavoritesWords({
       ) : (
         <WordsTable>
           {favoriteWords.map((word) => (
-            <>
-              <TdElement>
-                <span onClick={() => getWord(word)}>{word}</span>
-                <span onClick={() => removeWordFromFavorites(word)}>x</span>
-              </TdElement>
-            </>
+            <tbody key={word}>
+              <tr>
+                <TdElement>
+                  <span onClick={() => getWord(word)}>{word}</span>
+                </TdElement>
+              </tr>
+            </tbody>
           ))}
         </WordsTable>
       )}

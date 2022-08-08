@@ -12,7 +12,7 @@ function WordBox({ word, audio, meanings, phonetic }: WordBoxProps) {
     <div key={word}>
       <WordBoxWrapper>
         <h3>{word}</h3>
-        <h4>{phonetic ? phonetic : 'Phonetic is unavailable'}</h4>
+        <h4>{phonetic ? phonetic : "Phonetic is unavailable"}</h4>
       </WordBoxWrapper>
       <div>
         {audio ? (
@@ -22,17 +22,17 @@ function WordBox({ word, audio, meanings, phonetic }: WordBoxProps) {
             Your browser does not support the audio element.
           </Audio>
         ) : (
-          <p>Audio is unavaliabe</p>
+          <h2>Audio is unavailable</h2>
         )}
       </div>
       <div>
-        <h2>Meanings</h2>
+        <h1>Meanings</h1>
         {meanings.map((meaning) => {
           return (
             <p>
-              <span>
+              <h2>
                 {meaning.partOfSpeech} - {meaning.definitions[0].definition}
-              </span>
+              </h2>
             </p>
           );
         })}

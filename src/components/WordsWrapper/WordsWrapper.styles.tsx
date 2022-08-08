@@ -3,15 +3,18 @@ import styled from "styled-components";
 export const WordsTable = styled.table`
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid black;
-  max-height: 150px;
+  border: 3px solid black;
+  max-height: 200px;
   overflow-y: auto;
+  border-radius: 10px;
 `;
 
 export const TdElement = styled.td`
-  border: 1px solid black;
-  margin: 4px;
-  padding: 10px;
-  font-size: 22px;
+  border: 3px solid black;
+  margin: 0.4rem;
+  padding: 1rem;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
 `;
