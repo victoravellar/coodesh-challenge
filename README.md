@@ -24,3 +24,9 @@ How to run this project:
 - run yarn start: the project will be available on port 3000
 
 - run yarn test a: to run all unit tests
+
+Desktop:
+![image](https://user-images.githubusercontent.com/101952440/183525863-a73688f5-63e6-44ad-871a-e24f63af1357.png)
+
+Mobile:
+![image](https://user-images.githubusercontent.com/101952440/183525918-602fb8af-c24e-4619-af9f-78280b13b9b6.png)
