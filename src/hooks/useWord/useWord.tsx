@@ -12,7 +12,7 @@ export default function useWord() {
     meanings: [],
     phonetic: "",
   });
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(false);
   const [wordToBeSearch, setWordToBeSearch] = useState(pickRandomWord());
   const { wordList, includeWordOnWordList } = useWordList();
 
