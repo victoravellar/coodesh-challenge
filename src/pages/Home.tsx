@@ -6,7 +6,6 @@ import {
   HomeContainer,
   HomeWrapper,
   WordBoxContainer,
-  Wrapper,
 } from "./Home.styles";
 import { WordBox, WordsView, Button } from "../components";
 import { Spinner } from "../components/Spinner/Spinner.styles";
@@ -29,11 +28,6 @@ function Home() {
     getWord(wordToBeSearch);
   }, [wordToBeSearch]);
 
-  function searchForPreviusWord() {
-    const previousWord = wordList[wordList.length - 2];
-    setWordToBeSearch(previousWord);
-  }
-
   return (
     <HomeWrapper>
       <HomeContainer>
@@ -49,23 +43,21 @@ function Home() {
                 phonetic={phonetic}
               />
               <ButtonsWrapper>
-                <Wrapper>
-                  <Button press={() => searchForPreviusWord()} width={48}>
-                    Back
-                  </Button>
-                  <Button
-                    press={() => setWordToBeSearch(pickRandomWord())}
-                    width={48}
-                  >
-                    Next
-                  </Button>
-                </Wrapper>
+                <Button
+                  press={() => setWordToBeSearch(pickRandomWord())}
+                  width={48}
+                >
+                  Next
+                </Button>
                 {!favoriteWords.includes(word) ? (
-                  <Button press={() => setWordAsFavorite(word)}>
+                  <Button press={() => setWordAsFavorite(word)} width={48}>
                     Set word as favorite
                   </Button>
                 ) : (
-                  <Button press={() => removeWordFromFavorites(word)}>
+                  <Button
+                    press={() => removeWordFromFavorites(word)}
+                    width={48}
+                  >
                     Remove from favorites
                   </Button>
                 )}

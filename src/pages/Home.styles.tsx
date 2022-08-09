@@ -34,10 +34,4 @@ export const WordBoxContainer = styled.div`
 export const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
-`;
-
-export const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
 `;
